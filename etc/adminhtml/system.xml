@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config/etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="unipay" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>UniPAY Checkout</label>
+                <field id="simplepath" type="text" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <frontend_model>UniPAYPaymentGateway\Unipay\Block\Adminhtml\System\Config\Form\SimplepathConfig</frontend_model>
+                </field>
+                <field id="active" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable UniPAY Payment Gateway Module.]]></comment>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Title</label>
+                    <comment><![CDATA[This controls the title which the user sees during checkout.]]></comment>
+                </field>
+                <field id="merchant_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merchant ID</label>
+                    <comment><![CDATA[The unique wallet number assigned to the Merchant during registration.]]></comment>
+                </field>
+                <field id="secret_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Secret Access Key</label>
+                    <comment><![CDATA[Activation parameter which  provides payment platform integration.]]></comment>
+                </field>    
+                <field id="ipn_url" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Call back URL</label>
+                    <frontend_model>UniPAYPaymentGateway\Unipay\Block\Adminhtml\Form\Field\IpnUrl</frontend_model>
+                    <comment><![CDATA[Call back URL is authorizing UniPAY transaction on merchants side.]]></comment>
+                </field>            
+                 <field id="slogan" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Slogan</label>
+                    <comment><![CDATA[Add text is  displayed as your slogan of  the UniPAY checkout page (max. 70 symbols).]]></comment>
+                </field>    
+                <field id="logo" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logo url</label>
+                    <comment><![CDATA[Add image direct url which displayed as your logo in the upper left corner of  the UniPAY checkout page.]]></comment>
+                </field>                   
+                <field id="completed_order_status" translate="label" type="select" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>UniPAY Complete status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                    <comment><![CDATA[Set status, when UniPAY order is "Completed"]]></comment>                    
+                </field>
+                <field id="pending_order_status" translate="label" type="select" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>UniPAY Pending status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                    <comment><![CDATA[Set status, when UniPAY order is "Pending"]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,29 @@
+{
+    "name": "unipay/unipay-payment-gateway-v2",
+    "description": "UniPAY Payment Gateway",
+    "version": "2.0.0",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "keywords": [
+        "UniPAY",
+        "Payment Gateway",
+        "Magento",
+        "ewallet"
+      ],
+    "authors": [
+        {
+            "name": "UniPAY Developer",
+            "email": "dev@UniPAY.com",
+            "homepage": "https://UniPAY.com",
+            "role" : "Developer"
+        }
+    ],    
+    "autoload": {
+        "psr-4": {
+            "UniPAYPaymentGateway\\Unipay\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
